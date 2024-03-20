@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NG.API", "NG.API\NG.API\NG.API.csproj", "{88E9DD75-9D17-452F-A13D-813CBDA372F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Executions", "Executions", "{BDB9AFA7-1AAA-45B4-878E-3A0DF5F83EE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NG.API", "NG.API", "{EC7ED61B-B38D-4F65-8DD8-3E77883977DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{738D60E1-D083-41EE-9551-8512C9F38930}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "ng.spa", "NG.SPA\ng.spa\ng.spa.esproj", "{A7765E23-E358-490C-A5E8-E180AFA0865F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NG.Application", "NG.API\NG.Application\NG.Application.csproj", "{0B9DA5BC-6E26-4A74-B19A-132C23718A3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NG.DataCore", "NG.API\NG.DataCore\NG.DataCore.csproj", "{3B6FD858-A007-44D2-B809-978B6070759A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NG.Infrastructure", "NG.API\NG.Infrastructure\NG.Infrastructure.csproj", "{E007E6EF-263C-4129-A3C6-EC696823944A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88E9DD75-9D17-452F-A13D-813CBDA372F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88E9DD75-9D17-452F-A13D-813CBDA372F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88E9DD75-9D17-452F-A13D-813CBDA372F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88E9DD75-9D17-452F-A13D-813CBDA372F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7765E23-E358-490C-A5E8-E180AFA0865F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7765E23-E358-490C-A5E8-E180AFA0865F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7765E23-E358-490C-A5E8-E180AFA0865F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A7765E23-E358-490C-A5E8-E180AFA0865F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7765E23-E358-490C-A5E8-E180AFA0865F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7765E23-E358-490C-A5E8-E180AFA0865F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0B9DA5BC-6E26-4A74-B19A-132C23718A3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B9DA5BC-6E26-4A74-B19A-132C23718A3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B9DA5BC-6E26-4A74-B19A-132C23718A3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B9DA5BC-6E26-4A74-B19A-132C23718A3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B6FD858-A007-44D2-B809-978B6070759A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B6FD858-A007-44D2-B809-978B6070759A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B6FD858-A007-44D2-B809-978B6070759A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B6FD858-A007-44D2-B809-978B6070759A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E007E6EF-263C-4129-A3C6-EC696823944A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E007E6EF-263C-4129-A3C6-EC696823944A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E007E6EF-263C-4129-A3C6-EC696823944A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E007E6EF-263C-4129-A3C6-EC696823944A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{88E9DD75-9D17-452F-A13D-813CBDA372F2} = {BDB9AFA7-1AAA-45B4-878E-3A0DF5F83EE6}
+		{A7765E23-E358-490C-A5E8-E180AFA0865F} = {BDB9AFA7-1AAA-45B4-878E-3A0DF5F83EE6}
+		{0B9DA5BC-6E26-4A74-B19A-132C23718A3B} = {EC7ED61B-B38D-4F65-8DD8-3E77883977DF}
+		{3B6FD858-A007-44D2-B809-978B6070759A} = {EC7ED61B-B38D-4F65-8DD8-3E77883977DF}
+		{E007E6EF-263C-4129-A3C6-EC696823944A} = {EC7ED61B-B38D-4F65-8DD8-3E77883977DF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C1DB9A3-4230-4725-847C-A12850EF3A9F}
+	EndGlobalSection
+EndGlobal

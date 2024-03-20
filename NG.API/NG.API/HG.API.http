@@ -1,0 +1,6 @@
+@NG.API_HostAddress = http://localhost:5015
+
+GET {{NG.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
