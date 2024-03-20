@@ -15,9 +15,16 @@ Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "ng.spa", "NG.SPA\ng.spa\ng.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NG.Application", "NG.API\NG.Application\NG.Application.csproj", "{0B9DA5BC-6E26-4A74-B19A-132C23718A3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NG.DataCore", "NG.API\NG.DataCore\NG.DataCore.csproj", "{3B6FD858-A007-44D2-B809-978B6070759A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NG.DataCore", "NG.API\NG.DataCore\NG.DataCore.csproj", "{3B6FD858-A007-44D2-B809-978B6070759A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NG.Infrastructure", "NG.API\NG.Infrastructure\NG.Infrastructure.csproj", "{E007E6EF-263C-4129-A3C6-EC696823944A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NG.Infrastructure", "NG.API\NG.Infrastructure\NG.Infrastructure.csproj", "{E007E6EF-263C-4129-A3C6-EC696823944A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFiles", "SolutionFiles", "{A3BBE8AB-1F0F-4BB9-8830-818922F13F1C}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
