@@ -27,6 +27,7 @@
     "axios-jwt": "^4.0.0",
     "clean-webpack-plugin": "^4.0.0",
     "https": "^1.0.0",
+    "jwt-decode": "^4.0.0",
     "mobx": "^6.9.0",
     "mobx-react-lite": "^3.4.3",
     "oidc-client-ts": "^2.2.3",

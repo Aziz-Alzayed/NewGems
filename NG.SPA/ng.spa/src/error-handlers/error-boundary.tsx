@@ -1,4 +1,4 @@
-import { Button, Result } from 'antd';
+import { Button, Result, Typography } from 'antd';
 import React, { ReactNode } from 'react';
 
 const tableContainerStyles = {
