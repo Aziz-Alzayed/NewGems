@@ -24,8 +24,5 @@
     "jsx": "react-jsx",
     "downlevelIteration": true
   },
-  "include": [
-    "src",
-    "AppRoutes.tsx"
-  ]
+  "include": [ "src/**/*", "src/types/images.d.ts" ]
 }

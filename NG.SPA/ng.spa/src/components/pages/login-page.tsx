@@ -11,7 +11,7 @@ const LoginPage: FC = () => {
 
     return (
         <div className="login-page-container">
-            <LoginForm isOpen={true} onClose={handleLoginClose} onRegisterClick={() => { navigate('/register') }} />
+            <LoginForm isOpen={true} onClose={handleLoginClose}/>
         </div>
     );
 };

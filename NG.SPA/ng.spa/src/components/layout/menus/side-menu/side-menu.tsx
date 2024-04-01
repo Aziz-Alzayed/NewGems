@@ -2,13 +2,11 @@ import { Menu } from "antd";
 import Sider from "antd/es/layout/Sider";
 import { FC, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useAuth } from "../../../auth/auth-provider/auth-provider";
-import { isAdmin, isSuper } from "../../../auth/auth-services/auth-service";
-import { useTheme } from "../theme-context";
+import { useAuth } from "../../../../auth/auth-provider/auth-provider";
+import { isAdmin, isSuper } from "../../../../auth/auth-services/auth-service";
 
 const SideMenu: FC = () => {
     const { user } = useAuth();
-    const { theme } = useTheme();
     const navigate = useNavigate();
     const location = useLocation();
     const [userIsAdmin, setUserIsAdmin] = useState<boolean>(false);
@@ -40,9 +38,8 @@ const SideMenu: FC = () => {
         !userIsAdmin ? <></>
             :
             (
-                <Sider collapsible theme={theme} >
+                <Sider collapsible >
                     <Menu
-                        theme={theme}
                         mode="inline"
                         selectedKeys={[selectedKey]}
                         onClick={handleMenuClick}

@@ -1,5 +1,5 @@
 import { setAuthTokens, clearAuthTokens, getAccessToken, getRefreshToken, isLoggedIn} from 'axios-jwt';
-import jwt_decode from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 import { postAuthRequest } from '../../services/api-services/api-auth-service';
 import { postRequest } from '../../services/api-services/api-service';
 import { ILoginRequest, IUserInfo, TokenPayload } from '../../models/auth-models/auth-models';
@@ -38,7 +38,7 @@ export const getRoles = async (): Promise<string[]> => {
     try {
         const accessToken = await getAccessTokenAsync();
         if (accessToken) {
-            const decoded = jwt_decode<TokenPayload>(accessToken);
+            const decoded: TokenPayload = jwtDecode<TokenPayload>(accessToken);
             // Adjust the key to match the JWT structure
             const roles = decoded["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
 

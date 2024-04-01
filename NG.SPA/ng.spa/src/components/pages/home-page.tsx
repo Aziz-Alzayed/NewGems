@@ -1,7 +1,6 @@
-import { Layout } from "antd";
 import { CSSProperties, FC } from "react";
-import logoImage from 'assets/images/x.png';
-const { Content } = Layout;
+import logoImage from 'assets/images/Logo.png';
+
 const HomePage: FC = () => {
 
     const layoutStyle: CSSProperties = {
@@ -29,14 +28,14 @@ const HomePage: FC = () => {
     };
 
     return (
-        <Layout style={layoutStyle}>
-            <Content style={contentStyle}>
+        <div style={layoutStyle}>
+            <div style={contentStyle}>
                 <img src={logoImage} alt="Logo" style={imageStyle} />
                 <p style={{ fontSize: '1.2rem' }}>
-                    Welcome to Expenses Flow App
+                    Welcome to New Gems App
                 </p>
-            </Content>
-        </Layout>
+            </div>
+        </div>
     );
 };
 

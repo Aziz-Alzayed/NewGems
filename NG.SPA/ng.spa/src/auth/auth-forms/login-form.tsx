@@ -1,16 +1,15 @@
 import { FC, useState } from 'react';
 import { useAuth } from '../auth-provider/auth-provider';
-import { Form, Input, Button, Checkbox, Modal, Spin, Typography, Divider, Row, Col } from 'antd';
+import { Form, Input, Button, Checkbox, Modal, Spin, Typography, Row, Col } from 'antd';
 import { ILoginRequest } from '../../models/auth-models/auth-models';
 import ForgotPasswordForm from './forget-password-form';
 
 interface LoginFormProps {
     isOpen: boolean;
     onClose: () => void;
-    onRegisterClick: () => void;
 }
 
-const LoginForm: FC<LoginFormProps> = ({ isOpen, onClose, onRegisterClick }) => {
+const LoginForm: FC<LoginFormProps> = ({ isOpen, onClose }) => {
     const { handleLogin } = useAuth();
     const [isLoading, setIsLoading] = useState(false);
     const [loginError, setLoginError] = useState('');
@@ -91,11 +90,6 @@ const LoginForm: FC<LoginFormProps> = ({ isOpen, onClose, onRegisterClick }) => 
                             Log in
                         </Button>
                     </Form.Item>
-
-                    <Divider>Or</Divider>
-                    <Button onClick={onRegisterClick} block>
-                        Register Now
-                    </Button>
                 </Form>
             </Spin>
             </Modal>
