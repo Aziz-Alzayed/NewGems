@@ -26,6 +26,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFiles", "SolutionFi
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "terraform", "terraform", "{8347DD4D-2A11-48F3-9FCA-D99226A2AF4E}"
+	ProjectSection(SolutionItems) = preProject
+		terraform\.terraform.lock.hcl = terraform\.terraform.lock.hcl
+		terraform\main.tf = terraform\main.tf
+		terraform\secrets.tfvars = terraform\secrets.tfvars
+		terraform\terraform.yml = terraform\terraform.yml
+		terraform\variables.tf = terraform\variables.tf
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +73,7 @@ Global
 		{0B9DA5BC-6E26-4A74-B19A-132C23718A3B} = {EC7ED61B-B38D-4F65-8DD8-3E77883977DF}
 		{3B6FD858-A007-44D2-B809-978B6070759A} = {EC7ED61B-B38D-4F65-8DD8-3E77883977DF}
 		{E007E6EF-263C-4129-A3C6-EC696823944A} = {EC7ED61B-B38D-4F65-8DD8-3E77883977DF}
+		{8347DD4D-2A11-48F3-9FCA-D99226A2AF4E} = {A3BBE8AB-1F0F-4BB9-8830-818922F13F1C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0C1DB9A3-4230-4725-847C-A12850EF3A9F}
