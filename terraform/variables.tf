@@ -53,12 +53,14 @@ variable "app_environment"{
   type        = string
 }
 
-variable "sql_server_credentials" {
-  description = "Azure SQL Server credentials"
-  type = object({
-    login    = string
-    password = string
-  })
+variable "sql_server_login" {
+  description = "Login for the Azure SQL Server"
+  type        = string
+}
+
+variable "sql_server_login_password" {
+  description = "Password for the Azure SQL Server"
+  type        = string
 }
 
 locals {
