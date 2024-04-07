@@ -33,5 +33,12 @@ jobs:
       working-directory: ./terraform
 
     - name: Terraform Apply
-      run: terraform plan -input=false
+      run: terraform apply -auto-approve
+      env:
+        ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+        ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+        ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+        ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+        SQL_SERVER_LOGIN: ${{ secrets.SQL_SERVER_LOGIN }}
+        SQL_SERVER_PASSWORD: ${{ secrets.SQL_SERVER_PASSWORD }}
       working-directory: ./terraform
