@@ -12,12 +12,12 @@ jobs:
   terraform:
     runs-on: ubuntu-latest
     env:
-      ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
-      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
-      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-      SQL_SERVER_LOGIN: ${{ secrets.SQL_SERVER_LOGIN }}
-      SQL_SERVER_PASSWORD: ${{ secrets.SQL_SERVER_PASSWORD }}
+      TF_VAR_subscription_id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+      TF_VAR_client_id: ${{ secrets.ARM_CLIENT_ID }}
+      TF_VAR_client_secret: ${{ secrets.ARM_CLIENT_SECRET }}
+      TF_VAR_tenant_id: ${{ secrets.ARM_TENANT_ID }}
+      TF_VAR_sql_server_login: ${{ secrets.SQL_SERVER_LOGIN }}
+      TF_VAR_sql_server_login_password: ${{ secrets.SQL_SERVER_PASSWORD }}
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v2
@@ -29,23 +29,9 @@ jobs:
 
     - name: Terraform Init
       run: terraform init
-      env:
-        ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-        ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
-        ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
-        ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-        SQL_SERVER_LOGIN: ${{ secrets.SQL_SERVER_LOGIN }}
-        SQL_SERVER_PASSWORD: ${{ secrets.SQL_SERVER_PASSWORD }}
       working-directory: ./terraform
 
     - name: Terraform Plan
       run: terraform plan -input=false
-      env:
-        ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-        ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
-        ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
-        ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-        SQL_SERVER_LOGIN: ${{ secrets.SQL_SERVER_LOGIN }}
-        SQL_SERVER_PASSWORD: ${{ secrets.SQL_SERVER_PASSWORD }}
       working-directory: ./terraform
       

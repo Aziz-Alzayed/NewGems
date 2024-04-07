@@ -11,6 +11,13 @@ jobs:
   terraform_ci:
     name: 'Terraform CI'
     runs-on: ubuntu-latest
+    env:
+      TF_VAR_subscription_id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+      TF_VAR_client_id: ${{ secrets.ARM_CLIENT_ID }}
+      TF_VAR_client_secret: ${{ secrets.ARM_CLIENT_SECRET }}
+      TF_VAR_tenant_id: ${{ secrets.ARM_TENANT_ID }}
+      TF_VAR_sql_server_login: ${{ secrets.SQL_SERVER_LOGIN }}
+      TF_VAR_sql_server_login_password: ${{ secrets.SQL_SERVER_PASSWORD }}
     # This job runs automatically on pull_request and push events to main branch.
     steps:
     - name: Checkout Repo
@@ -24,35 +31,14 @@ jobs:
     - name: Terraform Init
       run: terraform init
       working-directory: ./terraform
-      env:
-        ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-        ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
-        ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
-        ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-        SQL_SERVER_LOGIN: ${{ secrets.SQL_SERVER_LOGIN }}
-        SQL_SERVER_PASSWORD: ${{ secrets.SQL_SERVER_PASSWORD }}
         
     - name: Terraform Validate
       run: terraform validate
       working-directory: ./terraform
-      env:
-        ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-        ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
-        ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
-        ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-        SQL_SERVER_LOGIN: ${{ secrets.SQL_SERVER_LOGIN }}
-        SQL_SERVER_PASSWORD: ${{ secrets.SQL_SERVER_PASSWORD }}
 
     - name: Terraform Plan
       run: terraform plan
       working-directory: ./terraform
-      env:
-        ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-        ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
-        ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
-        ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-        SQL_SERVER_LOGIN: ${{ secrets.SQL_SERVER_LOGIN }}
-        SQL_SERVER_PASSWORD: ${{ secrets.SQL_SERVER_PASSWORD }}
 
   terraform_cd:
     name: 'Terraform CD'
@@ -76,10 +62,3 @@ jobs:
     - name: Terraform Apply
       run: terraform apply -auto-approve
       working-directory: ./terraform
-      env:
-        ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-        ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
-        ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
-        ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-        SQL_SERVER_LOGIN: ${{ secrets.SQL_SERVER_LOGIN }}
-        SQL_SERVER_PASSWORD: ${{ secrets.SQL_SERVER_PASSWORD }}
