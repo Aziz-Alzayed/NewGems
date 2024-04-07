@@ -9,11 +9,19 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["
-.API/NG.API.csproj", "NG.API/"]
-RUN dotnet restore "./NG.API/./NG.API.csproj"
+COPY NG.API/NG.API.csproj NG.API/
+COPY NG.Application/NG.Application.csproj NG.Application/
+COPY NG.DataCore/NG.DataCore.csproj NG.DataCore/
+COPY NG.Infrastructure/NG.Infrastructure.csproj NG.Infrastructure/
+
+
+RUN dotnet restore NG.API/NG.API.csproj
+RUN dotnet restore NG.Application/NG.Application.csproj
+RUN dotnet restore NG.DataCore/NG.DataCore.csproj
+RUN dotnet restore NG.Infrastructure/NG.Infrastructure.csproj
+
 COPY . .
-WORKDIR "/src/NG.API"
+WORKDIR /src/NG.API
 RUN dotnet build "./NG.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish

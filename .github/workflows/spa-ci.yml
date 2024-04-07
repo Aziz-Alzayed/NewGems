@@ -1,0 +1,51 @@
+name: React.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    env:
+      FRONTEND_PATH: ./NG.SPA/ng.spa
+
+    steps:
+    - uses: actions/checkout@v3
+  
+    - name: Echo Path
+      run: echo $FRONTEND_PATH
+      env:
+        FRONTEND_PATH: ${{ env.FRONTEND_PATH }}
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16' # Choose the Node.js version suitable for your project
+    
+    - name: Install dependencies
+      run: npm install
+      working-directory: ${{ env.FRONTEND_PATH }}
+
+    - name: Build
+      run: npm run build
+      working-directory: ${{ env.FRONTEND_PATH }}
+      
+    - name: Run tests
+      run: npm test
+      working-directory: ${{ env.FRONTEND_PATH }}
+
+    - name: Package frontend
+      uses: actions/upload-artifact@v2
+      with:
+        name: frontendProd
+        path: ${{ env.FRONTEND_PATH }}/build/**
+    
+    - name: Publishing to Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: frontendArtifacts
+        path: |
+          ./path/to/frontend/build/**

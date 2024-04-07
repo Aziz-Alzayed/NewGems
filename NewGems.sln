@@ -36,7 +36,30 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "terraform", "terraform", "{
 		terraform\variables.tf = terraform\variables.tf
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{97F02D6C-ABF7-4ACB-8FBD-698BCC6AE14B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{72B5BEF5-992B-4234-9F7B-9A784A78FE35}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "terraform", "terraform", "{38C77ACD-8826-405E-BAB5-781A9FE1FAEF}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\terraform-cd.yml = .github\workflows\terraform-cd.yml
+		.github\workflows\terraform-ci.yml = .github\workflows\terraform-ci.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{D06DABE5-B1C4-46E8-9419-9E7A82CDB89F}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\api-cd.yml = .github\workflows\api-cd.yml
+		.github\workflows\api-ci.yml = .github\workflows\api-ci.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "spa", "spa", "{3E984783-4224-45B2-875D-99BFC143EA6F}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\spa-cd.yml = .github\workflows\spa-cd.yml
+		.github\workflows\spa-ci.yml = .github\workflows\spa-ci.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{ABDD1FFF-6C4A-4DFA-9587-3938EC26C6C9}"
+	ProjectSection(SolutionItems) = preProject
+		NG.API\Dockerfile = NG.API\Dockerfile
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,7 +100,11 @@ Global
 		{3B6FD858-A007-44D2-B809-978B6070759A} = {EC7ED61B-B38D-4F65-8DD8-3E77883977DF}
 		{E007E6EF-263C-4129-A3C6-EC696823944A} = {EC7ED61B-B38D-4F65-8DD8-3E77883977DF}
 		{8347DD4D-2A11-48F3-9FCA-D99226A2AF4E} = {A3BBE8AB-1F0F-4BB9-8830-818922F13F1C}
-		{97F02D6C-ABF7-4ACB-8FBD-698BCC6AE14B} = {A3BBE8AB-1F0F-4BB9-8830-818922F13F1C}
+		{72B5BEF5-992B-4234-9F7B-9A784A78FE35} = {A3BBE8AB-1F0F-4BB9-8830-818922F13F1C}
+		{38C77ACD-8826-405E-BAB5-781A9FE1FAEF} = {72B5BEF5-992B-4234-9F7B-9A784A78FE35}
+		{D06DABE5-B1C4-46E8-9419-9E7A82CDB89F} = {72B5BEF5-992B-4234-9F7B-9A784A78FE35}
+		{3E984783-4224-45B2-875D-99BFC143EA6F} = {72B5BEF5-992B-4234-9F7B-9A784A78FE35}
+		{ABDD1FFF-6C4A-4DFA-9587-3938EC26C6C9} = {A3BBE8AB-1F0F-4BB9-8830-818922F13F1C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0C1DB9A3-4230-4725-847C-A12850EF3A9F}
