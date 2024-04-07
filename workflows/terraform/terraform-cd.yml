@@ -1,14 +1,16 @@
-name: 'Terraform'
+name: 'Terraform CD'
 
 on:
   push:
     branches:
-    - main
-  pull_request:
+      - main
 
 jobs:
   terraform:
+    name: 'Terraform'
     runs-on: ubuntu-latest
+    environment: production
+
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v2
@@ -21,11 +23,8 @@ jobs:
     - name: Terraform Init
       run: terraform init
 
-    - name: Terraform Plan
-      run: terraform plan
-
     - name: Terraform Apply
-      run: terraform apply -var "environment=production" -auto-approve
+      run: terraform apply -auto-approve
       env:
         ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
         ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
