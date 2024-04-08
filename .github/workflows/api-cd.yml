@@ -1,12 +1,6 @@
 name: .NET API CD
 
-on:
-  workflow_dispatch:
-  workflow_run:
-    workflows: [".NET API CI"]
-    branches: [main]
-    types: 
-      - completed
+on: workflow_dispatch
 
 jobs:
   deploy:

@@ -1,13 +1,7 @@
 name: React.js CD
 
 # Manually trigger or automatically after CI success
-on: 
-  workflow_dispatch:
-  workflow_run:
-    workflows: ["React.js CI"]
-    branches: [main]
-    types:
-      - completed
+on:  workflow_dispatch
 
 jobs:
   deploy:
