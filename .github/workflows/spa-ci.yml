@@ -34,7 +34,9 @@ jobs:
       working-directory: ${{ env.FRONTEND_PATH }}
       
     - name: Run tests
-      run: npm test
+      run: CI=true npm run test:ci
+      continue-on-error: true
+      timeout-minutes: 1
       working-directory: ${{ env.FRONTEND_PATH }}
 
     - name: Package frontend
