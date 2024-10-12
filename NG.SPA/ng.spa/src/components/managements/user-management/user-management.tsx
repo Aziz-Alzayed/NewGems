@@ -10,6 +10,7 @@ import { AppRoles } from '../../../auth/auth-services/role-management';
 import { isSuper } from '../../../auth/auth-services/auth-service';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../auth/auth-provider/auth-provider';
+import CommonPageTemplate from '../../helpers/common-page-template';
 
 const UserManagement = observer(() => {
     const navigate = useNavigate();
@@ -167,7 +168,7 @@ const UserManagement = observer(() => {
 
     const dataSource = users.map(user => ({ ...user, key: user.id }));
     return (
-        <>
+        <CommonPageTemplate>
             <Button type="primary" style={{ marginBottom: 16 }} onClick={addNewUserModal.open}>
                 Add User
             </Button>
@@ -179,7 +180,7 @@ const UserManagement = observer(() => {
                     userData={userToEdit}
                     modifiedBySuper={isUserSuper}
                 />}
-        </>
+        </CommonPageTemplate>
     );
 });
 

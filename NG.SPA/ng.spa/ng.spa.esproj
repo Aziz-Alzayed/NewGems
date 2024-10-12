@@ -11,5 +11,7 @@
   <ItemGroup>
     <Folder Include="build\" />
     <Folder Include="coverage\" />
+    <Folder Include="src\models\employee-activities-models\" />
+    <Folder Include="src\stores\products-stores\" />
   </ItemGroup>
 </Project>

@@ -5,7 +5,12 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../../auth/auth-provider/auth-provider";
 import { isAdmin, isSuper } from "../../../../auth/auth-services/auth-service";
 
-const SideMenu: FC = () => {
+interface SideMenuProps {
+    collapsed: boolean;
+    onCollapse: (collapsed: boolean) => void;
+}
+
+const SideMenu: FC<SideMenuProps> = ({ collapsed, onCollapse }) => {
     const { user } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
@@ -23,10 +28,9 @@ const SideMenu: FC = () => {
         } else {
             setUserIsAdmin(false);
         }
-    }, [user]); 
+    }, [user]);
 
-
-    const menuPaths = ['/user-management', '/another-path', '/more-paths'];
+    const menuPaths = ['/user-management', '/products-portal', '/more-paths'];
     // Derive selected key from current location
     const selectedKey = menuPaths.find(path => location.pathname.startsWith(path)) || '/';
 
@@ -38,17 +42,28 @@ const SideMenu: FC = () => {
         !userIsAdmin ? <></>
             :
             (
-                <Sider collapsible >
+                <Sider
+                    collapsible
+                    collapsed={collapsed}
+                    onCollapse={onCollapse}
+                    collapsedWidth={80}
+                    style={{
+                        overflowY: 'auto',
+                        height: '100vh',
+                        position: 'fixed',
+                        left: 0
+                    }}
+                >
                     <Menu
                         mode="inline"
                         selectedKeys={[selectedKey]}
                         onClick={handleMenuClick}
                     >
                         <Menu.Item key="/user-management">User Management</Menu.Item>
+                        <Menu.Item key="/products-portal">Products Portal</Menu.Item>
                     </Menu>
                 </Sider>
             )
-
     );
 }
 export default SideMenu;

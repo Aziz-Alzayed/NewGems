@@ -6,20 +6,21 @@ import usersStore from "../../../stores/admin-stores/admin-store";
 import AdminRoleComponent from "../../../auth/auth-wrappers/admin-role-components";
 
 const UsersLoader: React.FC = observer(() => {
-    const { users, loadAllUsers } = usersStore;
+    const { users, loadAllUsers, usersLoading } = usersStore;
 
     useEffect(() => {
         if (!users.length) {
             loadAllUsers();
         }
-    },[]);
+    }, []);
 
-    if (!users.length) {
-        return <div><Spin tip="Load Users..." /></div>;
-    }
-    else {
-        return <Outlet />
-    }
+
+    return (
+        <Spin tip="Load Users..." spinning={!users.length && usersLoading} >
+            <Outlet />
+        </Spin>
+    );
+
 });
 
 export default AdminRoleComponent(UsersLoader);
